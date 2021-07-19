@@ -3,9 +3,6 @@ let isLoading = false;
 
 const webview = document.querySelector('webview');
 const sadWebview = document.querySelector('#sad-webview');
-const locationElement = document.querySelector('#location');
-const locationForm = document.querySelector('#location-form');
-const terminateButton = document.querySelector('#terminate');
 const controls = document.querySelector('#controls');
 const homeButton = document.querySelector('#home');
 const reloadButton = document.querySelector('#reload');
@@ -58,7 +55,6 @@ function handleLoadCommit(event) {
     return;
   }
 
-  locationElement.value = event.url;
   backButton.disabled = !webview.canGoBack();
   forwardButton.disabled = !webview.canGoForward();
 }
@@ -71,8 +67,6 @@ function handleLoadStart(event) {
   if (!event.isTopLevel) {
     return;
   }
-
-  locationElement.value = event.url;
 }
 
 function handleLoadStop(event) {
@@ -93,8 +87,6 @@ function handleLoadRedirect(event) {
   if (!event.isTopLevel) {
     return;
   }
-
-  locationElement.value = event.newUrl;
 }
 
 window.onresize = doLayout;
@@ -127,15 +119,6 @@ reloadButton.addEventListener(
     }
   }
 );
-
-terminateButton.onclick = function() {
-  webview.terminate();
-};
-
-locationForm.onsubmit = function(e) {
-  e.preventDefault();
-  navigateTo(locationElement.value);
-};
 
 webview.addEventListener('exit', handleExit);
 webview.addEventListener('loadstart', handleLoadStart);

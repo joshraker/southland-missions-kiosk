@@ -5,6 +5,7 @@ body {
 }
 
 #controls {
+  font-size: 5vh;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -14,10 +15,10 @@ body {
 
 #controls button,
 #controls input {
-  font-size: 14px;
-  line-height: 24px;
-  border-radius: 2px;
-  padding: 0 6px;
+  font-size: 1em;
+  line-height: 1.2em;
+  border-radius: 0.1em;
+  padding: 0 0.2em;
 }
 
 button,
@@ -37,11 +38,11 @@ input[type="submit"]:hover {
 compared to the back/forward buttons */
 #controls #home,
 #controls #terminate {
-  font-size: 24px;
+  font-size: 1em;
 }
 
 #controls #reload {
-  font-size: 20px;
+  font-size: 0.8em;
 }
 
 #location {
