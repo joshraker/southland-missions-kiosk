@@ -6,5 +6,5 @@ KIOSK_APP_DIR='/media/pi/STATE/dev_image/share/kiosk_app/kiosk-app'
 echo 'Updating kiosk app...'
 sudo rm -rf "$KIOSK_APP_DIR"
 sudo cp -r "$APP_DIR" "$KIOSK_APP_DIR"
-sudo rm -rf "${KIOSK_APP_DIR}/scripts"
+sudo rm -rf "${KIOSK_APP_DIR}/scripts" "${KIOSK_APP_DIR}/.git"
 

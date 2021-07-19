@@ -6,12 +6,13 @@
       ]
     }
   },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvbncWeJpoYoypFKELXTeq9TsrAUXKl/F0161r3mgVAWKQXwmFHjXgyU2NprDYf7homYCIAXLCVESf4cWRGcBq5khjYvtHKjceF3Snd/vbyojGF/a1qCOD7rKv8R/AfKnASsV2cwzlNHlwyfCfmf0qSqKtfjSBa2cU61+Rzr+yipmhSTeVEKqYZTJCcuhoENr4uCduKlNtt0tUS6vupgjjFKWsz46tvCyRlKnf/P4EshIYstwHEUiu64o4SfdYEaXnpE0bQ2gbuD8NKjsfDKKd7deg0ojCBmX2BMBEDpzGAUy9m3ZmIRvMsLhsd+c3zUqiQih9jUPeCXRe32LOvm55wIDAQAB",
   "version":"0.1",
   "manifest_version": 2, 
   "minimum_chrome_version": "31.0.0.0", 
   "name": "Southland Missions Kiosk", 
   "permissions": [
     "webview"
- ],
+  ],
   "kiosk_enabled": true
 }
