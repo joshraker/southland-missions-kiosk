@@ -5,9 +5,12 @@ if [ "$EUID" -ne 0 ]; then
   exit
 fi
 
-APP_DIR=$(cd $(dirname "$0")/.. && pwd)
+set -e
 
-source "${APP_DIR}/scripts/env.sh"
+DIR="$(cd $(dirname "$0") && pwd)"
+source "${DIR}/env.sh"
+
+APP_DIR="$(dirname "$DIR")"
 
 echo 'Updating kiosk app...'
 rm -rf "$KIOSK_APP_DIR"

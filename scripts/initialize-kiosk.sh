@@ -5,14 +5,17 @@ if [ "$EUID" -ne 0 ]; then
   exit
 fi
 
-APP_DIR=$(cd $(dirname "$0")/.. && pwd)
+set -e
 
-source "${APP_DIR}/scripts/env.sh"
+DIR="$(cd $(dirname "$0") && pwd)"
+source "${DIR}/env.sh"
 
 ETC='/media/pi/ROOT-A/etc'
 CHROME_CONF_FILE="${ETC}/chrome_dev.conf"
 SERVICE_FILE="${ETC}/init/system-services.override"
 KIOSK_CONF_FILE="${KIOSK_DIR}/config.json"
+
+echo 'Initializing Kiosk...'
 
 if grep -F -- '--force-kiosk-mode' "$CHROME_CONF_FILE" &> /dev/null; then
   echo "${CHROME_CONF_FILE} up-to-date"
@@ -28,7 +31,7 @@ else
   echo 'start on started boot-services' > "$SERVICE_FILE"
 fi
 
-mkdir -p "$KIOSK_DIR"
+[ -e "$KIOSK_DIR" ] || mkdir -p "$KIOSK_DIR"
 
 if [ -e "$KIOSK_CONF_FILE" ]; then
   echo "${KIOSK_CONF_FILE} already exists"
@@ -43,4 +46,5 @@ else
 HERE
 fi
 
-"${APP_DIR}/scripts/update-kiosk.sh"
+echo
+"${DIR}/update-kiosk.sh"
