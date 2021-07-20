@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="browser.css">
-  <body>
-    <webview style="width:100%; height:100%"></webview>
-    <div id="sad-webview">
-      <div id="sad-webview-icon">&#9762;</div>
-      <h2 id="crashed-label">Aw, Snap!</h2>
-      <h2 id="killed-label">He's Dead, Jim!</h2>
+<head>
+  <link rel="stylesheet" href="vendor/material-icons.css">
+  <link rel="stylesheet" href="vendor/materialize.css">
+  <link rel="stylesheet" href="browser.css">
+<body>
+<div id="main-container">
+  <webview class="w-100 flex-grow"></webview>
+  <div id="controls" class="w-100">
+    <button id="back" class="btn btn-raised waves-effect waves-light" title="Go Back"><i class="material-icons">arrow_back</i></button>
+    <button id="home" class="btn btn-raised waves-effect waves-light" title="Go Home"><i class="material-icons">home</i></button>
+    <button id="forward" class="btn btn-raised waves-effect waves-light" title="Go Forward"><i class="material-icons">arrow_forward</i></button>
+  </div>
+</div>
 
-      <p>Something went wrong while displaying this webpage.
-      To continue, reload or go to another page.</p>
-    </div>
-    <div id="controls">
-      <button id="back" title="Go Back">&#9664;</button>
-      <button id="forward" title="Go Forward">&#9654;</button>
-      <button id="reload" title="Reload">&#10227;</button>
-      <button id="home" title="Go Home">&#8962;</button>
-    </div>
-    <script src="browser.js"></script>
-  </body>
+<script src="vendor/materialize.js"></script>
+<script src="browser.js"></script>
+</body>
 </html>
