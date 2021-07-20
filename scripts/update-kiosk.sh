@@ -1,10 +1,15 @@
 #!/bin/bash
 
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run $(basename "$0") as root"
+  exit
+fi
+
 APP_DIR=$(cd $(dirname "$0")/.. && pwd)
-KIOSK_APP_DIR='/media/pi/STATE/dev_image/share/kiosk_app/kiosk-app'
+
+source "${APP_DIR}/scripts/env.sh"
 
 echo 'Updating kiosk app...'
-sudo rm -rf "$KIOSK_APP_DIR"
-sudo cp -r "$APP_DIR" "$KIOSK_APP_DIR"
-sudo rm -rf "${KIOSK_APP_DIR}/scripts" "${KIOSK_APP_DIR}/.git"
-
+rm -rf "$KIOSK_APP_DIR"
+cp -r "$APP_DIR" "$KIOSK_APP_DIR"
+rm -rf "${KIOSK_APP_DIR}/scripts" "${KIOSK_APP_DIR}/.git"
