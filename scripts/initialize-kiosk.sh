@@ -10,10 +10,13 @@ set -e
 DIR="$(cd $(dirname "$0") && pwd)"
 source "${DIR}/env.sh"
 
-ETC='/media/pi/ROOT-A/etc'
-CHROME_CONF_FILE="${ETC}/chrome_dev.conf"
-SERVICE_FILE="${ETC}/init/system-services.override"
+CHROME_CONF_FILE="${DEVICE_ETC}/chrome_dev.conf"
+SERVICE_FILE="${DEVICE_ETC}/init/system-services.override"
 KIOSK_CONF_FILE="${KIOSK_DIR}/config.json"
+
+# The device needs to be mounted before we can use it
+trap unmount-device EXIT
+mount-device
 
 echo 'Initializing Kiosk...'
 

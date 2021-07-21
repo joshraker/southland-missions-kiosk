@@ -12,6 +12,10 @@ source "${DIR}/env.sh"
 
 APP_DIR="$(dirname "$DIR")"
 
+# The device needs to be mounted before we can use it
+trap unmount-device EXIT
+mount-device
+
 echo 'Updating kiosk app...'
 rm -rf "$KIOSK_APP_DIR"
 cp -r "$APP_DIR" "$KIOSK_APP_DIR"
