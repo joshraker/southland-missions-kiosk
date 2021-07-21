@@ -10,7 +10,6 @@ set -e
 DIR="$(cd $(dirname "$0") && pwd)"
 source "${DIR}/env.sh"
 
-CHROME_CONF_FILE="${DEVICE_ETC}/chrome_dev.conf"
 SERVICE_FILE="${DEVICE_ETC}/init/system-services.override"
 KIOSK_CONF_FILE="${KIOSK_DIR}/config.json"
 
@@ -19,13 +18,6 @@ trap unmount-device EXIT
 mount-device
 
 echo 'Initializing Kiosk...'
-
-if grep -F -- '--force-kiosk-mode' "$CHROME_CONF_FILE" &> /dev/null; then
-  echo "${CHROME_CONF_FILE} up-to-date"
-else
-  echo "Updating ${CHROME_CONF_FILE}..."
-  echo '--force-kiosk-mode' >> "$CHROME_CONF_FILE"
-fi
 
 if [ -e "$SERVICE_FILE" ]; then
   echo "${SERVICE_FILE} already exits"
@@ -50,4 +42,4 @@ HERE
 fi
 
 echo
-"${DIR}/update-kiosk.sh"
+"${DIR}/enable-kiosk.sh"
