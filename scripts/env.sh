@@ -16,6 +16,7 @@ unmount-dir() {
   # Unmounts and, if successful, removes each directory
   for var in "$@"; do
     if [ -e "$var" ]; then
+      sync
       umount "$var"
       rmdir "$var"
     fi

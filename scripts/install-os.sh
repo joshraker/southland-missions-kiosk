@@ -30,4 +30,3 @@ echo "Writing ${OS_IMG} to ${DEVICE} (${IMG_SIZE})..."
 dd if="$OS_IMG" of="$DEVICE" bs=1M conv=fsync status=progress
 sync
 
-#"${DIR}/initialize-kiosk.sh"
