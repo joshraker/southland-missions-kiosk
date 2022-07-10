@@ -1,4 +1,4 @@
-const homeUrl = 'https://www.southlandchurch.org';
+const homeUrl = 'https://southland-missions.joshraker.com';
 
 const webview = document.querySelector('webview');
 const homeButton = document.querySelector('#home');
