@@ -6,12 +6,11 @@ example app.
 
 ## Initial Setup
 
-1. Insert an SD card to install the kiosk on via USB adapter 
+1. Insert SD card to install the kiosk on via USB adapter 
 2. Run `sudo ./scripts/install-os.sh`
-3. Boot the kiosk SD card and configure WiFi
-4. Re-insert the kiosk SD card via USB
-5. Run `sudo ./scripts/initialize-kiosk.sh`
-6. Boot the SD card and the kiosk app will automatically start up
+3. Boot the SD card and configure Wi-Fi
+4. Hit the `escape` key when it tries to install updates and the kiosk app will
+   automatically start up
 
 ## Updating the App
 

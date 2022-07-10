@@ -30,8 +30,8 @@ unmount-device() (
   # Unmount and remove the directories we plan to mount to
   unmount-dir "$DEVICE_STATE_MOUNT" "$DEVICE_ROOT_MOUNT"
 
-  # Unmount the entire device in case any partitons were missed
-  umount "${DEVICE}"?* &> /dev/null
+  # Unmount the entire device in case any partitions were missed
+  umount "${DEVICE}"* &> /dev/null
 
   return 0 # Ensure a successful return
 )

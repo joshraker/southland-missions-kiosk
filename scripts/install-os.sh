@@ -17,7 +17,7 @@ if [ ! -f "$OS_IMG" ]; then
   exit 1
 fi
 
-if [ ! -e "${DEVICE}1" ]; then
+if [ ! -e "${DEVICE}" ]; then
   echo "Device ${DEVICE} not found"
   exit 1
 fi
